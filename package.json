@@ -1,13 +1,30 @@
 {
-  "scripts": {
-    "dev": "wrangler dev src/index.ts",
-    "deploy": "wrangler deploy --minify src/index.ts"
-  },
-  "dependencies": {
-    "hono": "^4.0.9"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240222.0",
-    "wrangler": "^3.30.1"
-  }
+	"name": "pro-tutor",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+		"db:generate": "drizzle-kit generate:pg",
+		"db:migrate": "tsx ./src/db/migrate.ts"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20240222.0",
+		"dotenv": "^16.4.5",
+		"drizzle-kit": "^0.20.14",
+		"pg": "^8.11.3",
+		"postgres": "^3.4.3",
+		"tsx": "^4.7.1",
+		"typescript": "^5.0.4",
+		"wrangler": "^3.0.0"
+	},
+	"dependencies": {
+		"@lucia-auth/adapter-drizzle": "^1.0.2",
+		"@neondatabase/serverless": "^0.9.0",
+		"drizzle-orm": "^0.29.4",
+		"hono": "^4.0.9",
+		"lucia": "^3.0.1",
+		"oslo": "^1.1.3"
+	}
 }
